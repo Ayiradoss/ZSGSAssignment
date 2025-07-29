@@ -88,13 +88,16 @@ class Qa4{
 
 class Qa5{
 	int speed;
-	static{
-	System.out.println("Static method first executed");
-	}
 	{
 	     speed = 230;
 	}
-	public static void main(String args[]){
+	{
+		System.out.println("20");
+	}
+	static{
+	System.out.println("Static method first executed");
+	}
+		public static void main(String args[]){
 		Qa5 obj = new Qa5();
 	   System.out.println("Object value is : "+ obj.speed);
 	}
@@ -104,8 +107,8 @@ class Qa5{
 
 class Qa6{
   public static void main(String args[]){
-     double value = 20.65739673972;
-	 float value1 = (float) value;
+     double value = 17.5783458678;
+	 char value1 = (char) value;
 	 System.out.println("Original value : "+ value);
 	 System.out.print("After explict : "+value1);
   }
@@ -116,7 +119,6 @@ class Qa6{
 class Qa7{
   public static void main(String args[]){
     int n = 16;
-	int temp = n;
 	while(n%2==0)
 	{
 		n/=2;
@@ -129,7 +131,7 @@ class Qa7{
 
 class Qa8{
    public static void main(String args[]){
-	   int n = 8;
+	   int n = 14;
 	   if(n==0){
 		   System.out.print("Set bit is : 0");  
 	   }
@@ -178,16 +180,15 @@ class Employee{
 //10. Write a program to check whether the object is an instance of a particular class?
 
 class Qa10 {
+	int variable;
+    public static void main(String[] args) {
+		Qa10 obj = new Qa10();
+		obj.variable = 10;
+		if(obj instanceof Qa10){
+			System.out.println("Yes");
+		}
+		else{
+			System.out.println("No");
+		}
+	}
 }
-class InstanceCheck {
-  public static void main(String args[]) {  
-    Qa10 obj = new Qa10();
-    
-    if (obj instanceof Qa10) {    
-      System.out.println("Yes, obj is an instance of Qa10"); 
-    } else {       
-      System.out.println("No, obj is not an instance of Qa10");
-    }
-  }
-}
-

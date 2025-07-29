@@ -113,7 +113,7 @@ class Employee{
     private String name;
     private String designation;
     private String department;
-    private String monthlysalary;
+    private double monthlysalary;
 
     void setEmployeeID(int employeeID){
         this.employeeID= employeeID;
@@ -145,16 +145,120 @@ class Employee{
     double getMonthlySalary(){
         return monthlysalary;
     }
-     double annualSalary(double monthlysalary){
-        return monthlysalary*12;
+     public double annualSalary(){
+        return getMonthlySalary()*12;
     }
     public static void main(String args[]){
         Employee obj = new Employee();
-        System.out.println("EmployeeID : "+obj.setEmployeeID(1300));
-        System.out.println("Employee name : "+obj.setName("Ayiradoss"));
-        System.out.println("Designation : "+ obj.setDesignation("Software developer"));
-        System.out.println("Department : "+obj.setDepartment("IT"));
-        System.out.println("Monthly salary : "+obj.setMonthlySalary(70000.000));
+        obj.setEmployeeID(1300);
+        obj.setName("Ayiradoss");
+        obj.setDesignation("Software developer");
+        obj.setDepartment("IT");
+        obj.setMonthlySalary(70000.000);
+        System.out.println("Employee Details : ");
+        System.out.println("EmployeeID : "+obj.getEmployeeID());
+        System.out.println("Employee name : "+obj.getName());
+        System.out.println("Designation : "+ obj.getDesignation());
+        System.out.println("Department : "+obj.getDepartment());
+        System.out.println("Monthly salary : "+obj.getMonthlySalary());
         System.out.println("Annual Salary : "+obj.annualSalary());
+    }
+}
+
+/* 6. Design a simple inventory system in Java using object-oriented principles that demonstrates the use of static variables and object containment.
+Create two classes:
+---Store
+---Product
+Requirements:
+The Store class should have:
+a. storeName and storeLocation as static variables since they are common to all products in the store.
+b. A static method setStoreDetails(String name, String location) to initialize the static variables.
+c. A static method displayStoreDetails() to print store details.
+d. A list to maintain multiple Product objects (i.e., the store contains many products).
+e. A method addProduct(Product product) to add products to the store.
+f. A method displayAllProducts() to display details of all products.
+The Product class should have:
+a. Product ID, name, price, and quantity as instance variables.
+b. A constructor to initialize these fields.
+c. A method displayProduct() to show product details.
+Task: Implement the above classes and demonstrate their use in the main() method by:
+a. Setting store details once.
+b. Creating multiple product objects.
+c. Adding them to the store.
+d. Displaying store and product information.
+Also Check how many .class files are generated. */
+
+class BankAccount {
+    private String accountNumber;
+    private String accountHolderName;
+    private double balance;
+
+    // Constructor
+    public BankAccount(String accountNumber, String accountHolderName, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
+        this.balance = initialBalance;
+    }
+
+    // Getter methods
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    // Setter methods
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public void setAccountHolderName(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
+    }
+
+    // Deposit method
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit successful. Current balance: " + balance);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+    // Withdraw method
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawal successful. Current balance: " + balance);
+        } else {
+            System.out.println("Insufficient balance or invalid amount.");
+        }
+    }
+
+    // Display details
+    public void displayDetails() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder: " + accountHolderName);
+        System.out.println("Balance: " + balance);
+        System.out.println("---------------------------");
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount("1234567890", "DassAnnaa", 5000.0);
+        acc.displayDetails();
+
+        acc.deposit(1500.0);
+        acc.withdraw(2000.0);
+        acc.withdraw(6000.0);  // Should not allow
+
+        acc.displayDetails();
     }
 }

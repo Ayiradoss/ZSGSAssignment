@@ -1,4 +1,4 @@
-//1. Write a program that uses if statement to find the minimum of three numbers.
+/*1. Write a program that uses if statement to find the minimum of three numbers.*/
 //javac -encoding UTF-8 YourFileName.java
 //java YourFileName
 import java.util.Scanner;
@@ -19,13 +19,13 @@ class Day2 {
 	}
 }
 // 2. Write a program to do the following patterns using for loop?
-/*a) 1   1 b) R R R R
-    1 1     R     R
-     1      R R R R
-    1 1     R   R
-   1   1    R     R */
+/*a) 1   1     b) R R R R
+      1 1         R     R
+       1          R R R R
+      1 1         R   R
+     1   1        R     R  */
 
-class Pattern1
+class Qa2
 {
 	public static void main(String[] args)
 	{
@@ -36,14 +36,14 @@ class Pattern1
 	
 	public static void isA_Pattern(int n, int value)
 	{
-		System.out.println("This is A - Pattern");
+		System.out.println("A - Pattern is Here.....");
 		for(int i = 0; i < n; i++)
 		{
 			for (int j = 0; j < n; j++) 
             {
                 if (j == i || j == n - 1 - i) 
                 {
-                    System.out.print(value + " ");
+                    System.out.print(value+" ");
                 } 
                 else 
                 {
@@ -56,16 +56,17 @@ class Pattern1
 	
 	public static void isB_Pattern(int n, char ch)
 	{
-		System.out.println("This is A - Pattern");
+		System.out.println("B - Pattern is Here.....");
 		int rows = n;
 		int cols = n;
 		for(int i = 0; i < n; i++)
 		{
 			for(int j = 0; j < n; j++)
 			{
-				if((j==0) || (i==0 && j < cols-1) || (i==2 && j<cols - 1) || (j==cols - 2 && i==1) || (i - j==1 && i>=3)) 
+				if((j==0) || (i==0 && j < cols-1) || (i==2 && j<cols - 1) ||
+             (i==1&& j==cols - 2 ) || (i>=3 && i - j==1 )) 
 				{
-                    System.out.print(ch + " ");
+                    System.out.print(ch+" ");
                 } 
 				else 
 				{
@@ -83,6 +84,7 @@ class Qa3{
   int i=0;
   int num = 1;
   while(i<arr.length){
+   if(i =<  j - n - i)
    int j=0;
    while(j<arr[i]){
 	   System.out.print(num+" ");
@@ -100,31 +102,33 @@ class Qa3{
 class Qa4{
   public static void main(String args[])
   {
-     int i=0, r=5;
-    do
-    {
+   int i=0, r=5;
+   do
+   {
      int space=1, j=0;
-         do{
+      do{
          System.out.print(" ");
            space++;
-           }while(space<=r-i);
+      }
+      while(space<=r-i);
 
       int num = 1;
-        j=0;
-     do
-    {
-      System.out.print(num+" ");
-      num = num * (i - j)/(j + 1);
-      j++;
-    }while(j<=i);
+      do
+      {
+         System.out.print(num+" ");
+         num = num * (i - j)/(j + 1);
+         j++;
+      }
+      while(j<=i);
         System.out.println();
         i++;
-    }while(i<r);
+   }
+   while(i<r);
 
     System.out.println();
 
     String s = "ZOHOCORPORATIONS";
-     int idx = 0, row=1;
+     int idx= 0, row=1;
     do
    {
      int col=1;
@@ -134,10 +138,12 @@ class Qa4{
        System.out.print( s.charAt(idx) );
         idx++;
         col++;
-     }while(col<=4);
+     }
+     while(col<=4);
      System.out.println();
      row++;
-   }while(row<=4);
+   }
+   while(row<=4);
   }
 }
 
