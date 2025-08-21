@@ -165,7 +165,8 @@ class Employee{
     }
 }
 
-/* 6. Design a simple inventory system in Java using object-oriented principles that demonstrates the use of static variables and object containment.
+/* 6. Design a simple inventory system in Java using object-oriented principles that
+ demonstrates the use of static variables and object containment.
 Create two classes:
 ---Store
 ---Product
@@ -193,14 +194,14 @@ class BankAccount {
     private String accountHolderName;
     private double balance;
 
-    // Constructor
+    //Constructor
     public BankAccount(String accountNumber, String accountHolderName, double initialBalance) {
         this.accountNumber = accountNumber;
         this.accountHolderName = accountHolderName;
         this.balance = initialBalance;
     }
 
-    // Getter methods
+    //Getter methods
     public String getAccountNumber() {
         return accountNumber;
     }
@@ -213,7 +214,7 @@ class BankAccount {
         return balance;
     }
 
-    // Setter methods
+    //Setter methods
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
@@ -222,7 +223,7 @@ class BankAccount {
         this.accountHolderName = accountHolderName;
     }
 
-    // Deposit method
+    
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -232,7 +233,7 @@ class BankAccount {
         }
     }
 
-    // Withdraw method
+    //Withdraw method
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
@@ -242,22 +243,21 @@ class BankAccount {
         }
     }
 
-    // Display details
+    //Display details
     public void displayDetails() {
         System.out.println("Account Number: " + accountNumber);
         System.out.println("Account Holder: " + accountHolderName);
         System.out.println("Balance: " + balance);
         System.out.println("---------------------------");
     }
-
-    // Main method
+    
     public static void main(String[] args) {
-        BankAccount acc = new BankAccount("1234567890", "DassAnnaa", 5000.0);
+        BankAccount acc = new BankAccount("1234567890", "Dass", 5000.0);
         acc.displayDetails();
 
         acc.deposit(1500.0);
         acc.withdraw(2000.0);
-        acc.withdraw(6000.0);  // Should not allow
+        acc.withdraw(6000.0);  
 
         acc.displayDetails();
     }

@@ -2,8 +2,11 @@
 int quotient = arr[7] / arr[4];
 Develop a Java program which handles any unexpected situations that may arise during execution. */
 import java.io.*;
-import java.util.InputMismatchException;
+import java.lang.*;
+import java.util.InputMismatchException; 
 import java.util.Scanner;
+
+import javax.naming.AuthenticationException;
 class Qus1{
     public static void main(String args[]){
         
@@ -158,3 +161,55 @@ class Qus6{
 
  /*8. Design a login system that throws AuthenticationException if the username or password is incorrect.
   Handle it and display a login failure message. */
+
+  class Qus8{
+    public static void main(String args[]) throws AuthenticationException{
+        Scanner sc = new Scanner(System.in);
+        try{
+        System.out.print("Enter your Username: ");
+        String getusername = sc.nextLine();
+        System.out.print("Enter your password: ");
+        String getpassword = sc.nextLine();
+            String username = "Dass";
+            String password = "123dass";
+
+            if(!(getpassword.equals(password)) ||  !(getusername.equals(username))){
+                throw new Exception("AuthenticationException");
+            }
+           System.out.println("Username and password is valid");
+        }
+        catch(Exception e){
+            System.out.print("Error: "+e.getMessage());
+        }
+    }
+  }
+
+  /*9. Create a method to read a file from disk. Handle FileNotFoundException and IOException using
+   try-catch-finally. */
+
+class Qus9{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+    }
+}
+
+/*10. Write a Java program to manage a voting system where a person must be at least 18 years old to be
+ eligible to vote. Use a custom exception to handle the scenario when an ineligible person tries to register
+ for voting. Display appropriate messages for eligible and ineligible voters. */
+
+ class Qus10{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your Age: ");
+        int age = sc.nextInt();
+        try{
+            if(age<18){
+                throw new Exception("AgeNotEligibleException");
+            }
+            System.out.println("You are eligible to vote");
+        }
+        catch(Exception e){
+            System.out.println("Error: "+e.getMessage());
+        }
+    }
+ }

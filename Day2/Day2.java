@@ -1,6 +1,5 @@
 /*1. Write a program that uses if statement to find the minimum of three numbers.*/
-//javac -encoding UTF-8 YourFileName.java
-//java YourFileName
+
 import java.util.Scanner;
 import java.util.*;
 class Day2 {
@@ -57,7 +56,6 @@ class Qa2
 	public static void isB_Pattern(int n, char ch)
 	{
 		System.out.println("B - Pattern is Here.....");
-		int rows = n;
 		int cols = n;
 		for(int i = 0; i < n; i++)
 		{
@@ -78,23 +76,89 @@ class Qa2
 	}
 }
 
-class Qa3{
-  public static void main(String args[]){
-    int[]arr ={1,2,3,2,1};
-  int i=0;
-  int num = 1;
-  while(i<arr.length){
-   if(i =<  j - n - i)
-   int j=0;
-   while(j<arr[i]){
-	   System.out.print(num+" ");
-	   num++;
-	   j++;
-  }
-  System.out.println();
-  i++;
-  }
+//3. Write a program to do the following patterns using while loop?
+
+//Diamond pattern 
+
+class Pattern
+{
+	public static void main(String[]args)
+	{
+		
+		Scanner scan=new Scanner(System.in);
+		
+		System.out.println("Enter a size");
+		
+		int size=scan.nextInt();
+		
+		int i=1,a=0,cnt=1;
+		
+		do
+		{
+			int j=1,space=1;
+			
+			if(i>(size/2)+1)
+			{
+				a--;
+		
+			}
+			else{
+				a=i;
+			}
+			
+			while(space<=Math.abs(((size/2)+1)-i))
+			{
+				System.out.print(" ");
+				space++;
+			}
+			
+			while(j<=a)
+			{  
+				 System.out.print((cnt++)+" ");  
+			  
+				j++;
+			}
+			System.out.println();
+		i++;
+		}while(i<=size);
+	}
 }
+//b w   Pattern
+ 
+
+
+
+class PatternB
+{
+	public static void main(String[]args)
+	{
+		
+		int size=5;
+		
+		int i=1,a=0;
+		
+		while(i<=size)
+		{
+			int j=1;
+			
+			if(i>(size/2)+1)
+			{
+				a--;
+			}
+			else{
+				a=i;
+			}
+			
+			while(j<=a)
+			{  
+				 System.out.print("w ");  
+			  
+				j++;
+			}
+			System.out.println();
+		i++;
+		}
+	}
 }
 
 //
@@ -125,10 +189,10 @@ class Qa4{
    }
    while(i<r);
 
-    System.out.println();
+   System.out.println();
 
-    String s = "ZOHOCORPORATIONS";
-     int idx= 0, row=1;
+   String s = "ZOHOCORPORATIONS";
+   int idx= 0, row=1;
     do
    {
      int col=1;
@@ -149,20 +213,19 @@ class Qa4{
 
 //5. Define a method to find the sum of even numbers from the series 1, 2, 3, 4, 5, ...n using continue statement.
 
-class Qa5 {
+class Qa5{
   public static void main(String args[]){
-      int sum = 0;
-	  int n = 14;
-	  for(int i=0; i<=n; i+=2){
-	    if(i%2!= 0){
-		   continue;
+     int sum =0;
+	  int n = 25;
+	  for(int i=0; i<=n; i++){
+	    if(i%2== 0){
+		   sum +=i;
 		}
 		else{
-		 sum +=i;
+		 continue;
 		}
 	  }
 	  System.out.print(sum);
-	  
   }
 }
 
@@ -170,71 +233,71 @@ class Qa5 {
 
 class Qa6{
    public static void main(String args[]){
-      int n = 8;
-	  decToBin(n);
-   }
-	  public static void decToBin(int n){
-		  int temp = n;
-	     String binary = "";
-		 while(n!=0){
+      int n = 12;
+		int temp = n;
+	   String binary = "";
+		  while(n!=0){
 		  int rem = n%2;
 		  binary = rem+binary;
 		  n/=2;
-		 }
+		  }
 		 System.out.print("Decimal : " + temp + " Binary : "+ binary);
 	  }
 }
 
-//
 
 class Qa7{
    public static void main(String args[]){
 	 
-      int percent = 85;
-	  char grade;
-	  if(percent>=85 && percent<=100){
-		  grade ='A';
-	     System.out.println("Using if the Grade is A");
-	  }
-	  else if(percent>=70){
-		  grade='B';
-	     System.out.println("Using if the Grade is B");
-	  }
-	
-	  else if(percent>=50){ 
-	  grade='C';
-	     System.out.println("Using if the Grade is C");
-	  }
-      else{
-		  grade='F';
-	     System.out.println("Using if the result is Fail");
-      }
-	  switch(grade){
-		  case 'A':
-		  System.out.println("Using switch the grade is A");
-		  break;
-		  case 'B':
-		  System.out.println("Using switch the grade is B");
-		  break;
-		  case 'C':
-		  System.out.println("Using switch the grade is C");
-		  break;
-		  case 'F':
-		  System.out.println("Using switch the result is Fail");
-		  break;
-		  default:
-		  System.out.println("Invalid");
+   int percent = 85;
+	char grade;
+	if(percent>=85 && percent<=100){
+		grade ='A';
+	   System.out.println("Using if the Grade is A");
+	}
+	else if(percent>=70){
+		grade='B';
+	   System.out.println("Using if the Grade is B");
+	}
+	else if(percent>=50){ 
+	   grade='C';
+	   System.out.println("Using if the Grade is C");
+	}
+   else{
+		grade='F';
+	   System.out.println("Using if the result is Fail");
+   }
+	switch(grade){
+		case 'A':
+		System.out.println("Using switch the grade is A");
+		break;
+
+		case 'B':
+		System.out.println("Using switch the grade is B");
+		break;
+
+		case 'C':
+		System.out.println("Using switch the grade is C");
+		break;
+
+		case 'F':
+		System.out.println("Using switch the result is Fail");
+		break;
+
+		default:
+		System.out.println("Invalid");
 	  }	  
    }
 }
-
-//1. Write a program that creates an integer array of 10 elements, accepts values of arrays and Find the sum of all odd numbers.
+//Part 2------------------/////////////////-----------------///////////////////-----------------
+/*1. Write a program that creates an integer array of 10 elements, accepts values of arrays
+ and Find the sum of all odd numbers.*/
 
 class p1{
    public static void main(String args[]){
-      int[] arr = {11,1,2,3,4,5,6,7,8,9,10};
+     int[] arr = {11,1,2,3,4,5,6,7,8,9,10};
 	  int sum=0;
-	  for(int i=0; i<arr.length; i++){
+	   for(int i=0; i<arr.length; i++){
 		  if(arr[i]%2!=0)
 		  sum+=arr[i];
       }
@@ -246,7 +309,7 @@ class p1{
 
 class p2{
   public static void main(String args[]){
-    Scanner sc = new Scanner(System.in);
+   Scanner sc = new Scanner(System.in);
 	System.out.print("Enter 10 numbers : ");
 	int[] nums = new int[10];
 	for(int i=0; i<10; i++){
@@ -254,9 +317,9 @@ class p2{
 	}
 	System.out.print("Prime numbers are : ");
 	for(int i =0; i<10; i++){
-	  if(isPrime(nums[i])){
+	   if(isPrime(nums[i])){
 	     System.out.print(nums[i]+ " ");
-	  }
+	   }
 	}
   }
   public static boolean isPrime(int n){
@@ -282,7 +345,7 @@ class p3{
 	 for(int i=2; i<30;i++){
 	 fibon[i] = fibon[i-1]+fibon[i-2];
 	 }
-	 System.out.print("30 terms of fibonacce seriesis : ");
+	 System.out.print("30 terms of fibonacce series : ");
 	 for(int i=0; i<30; i++){
 	  System.out.print(fibon[i]+" " );
 	 }
@@ -290,9 +353,19 @@ class p3{
 }
 
 //
-
 class p4 {
-   static void print(int x[], int n) {
+  public static void main(String args[]){
+    Scanner sc =new Scanner(System.in);
+	System.out.print("Enter array size: ");
+      int len =sc.nextInt();
+       int[] arr= new int[len];
+	 System.out.println("Enter array elements: ");
+       for(int i= 0; i< len; i++) {
+        arr[i] =sc.nextInt();
+        }
+        print(arr,len);
+  }
+  static void print(int x[], int n) {
       int singleSum =0, doubleSum =0;
       for(int i =0; i < n; i++) {
        int val=x[i];
@@ -306,23 +379,12 @@ class p4 {
       System.out.println("Sum of single digit elements is : "+ singleSum);	  
 	  System.out.println("Sum of double digit elements is : "+ doubleSum);
   }
-  public static void main(String args[]){
-    Scanner sc =new Scanner(System.in);
-	System.out.print("Enter array size: ");
-      int len =sc.nextInt();
-       int[] arr= new int[len];
-	 System.out.println("Enter array elements: ");
-       for(int i= 0; i< len; i++) {
-        arr[i] =sc.nextInt();
-        }
-        print(arr,len);
-  }
 }
 
-//
+
 class p5{
   public static void main(String args[]){
-      char[] x={'m','n','o','p'};
+     char[] x={'m','n','o','p'};
 	  char[] y={'m','n','o','p'};
 	  boolean iden = true;
 	  if(x.length!=y.length){
@@ -330,11 +392,11 @@ class p5{
 	  }
 	  else{
 		  for(int i=0; i<x.length; i++){
-			  if(x[i]!=y[i]){
+			if(x[i]!=y[i]){
 			   iden =false;
 			   break;
-			  }
-  }
+			}
+         }
 }
 if(iden){
   System.out.println("This arrays are identical");
@@ -349,11 +411,11 @@ else{
 //
 class p6{
   public static void main(String args[]){
-    int[] year = {1982, 1987, 1993, 1996, 1999, 2003, 2006, 2007, 2009, 2010, 2016, 2002};
+   int[] year = {1982, 1987, 1993, 1996, 1999, 2003, 2006, 2007, 2009, 2010, 2016, 2002};
 	Arrays.sort(year);
 	Scanner sc = new Scanner(System.in);
 	System.out.print("Enter your year of graduation: ");
-       int target = sc.nextInt();
+      int target = sc.nextInt();
 	   boolean found = binarySearch(year, target);
 	   if(found){
 	      System.out.print("Record exists");
@@ -366,7 +428,7 @@ class p6{
    int left =0;
    int right =arr.length-1;
    while(left<=right){
-      int mid = left+(right -left)/2;
+      int mid = left+right /2;
 	  if(arr[mid]==target){
 	    return true;
 	  }
@@ -385,7 +447,7 @@ class p6{
 
 class p7{
    public static void main(String args[]){
-      double[] weigth = {32,45,72,53,25,63,67,34,74,52};
+      int[] weigth = {32,45,72,53,25,63,67,34,74,52};
 	  for(int i=0; i<weigth.length; i++){
 	    int max = i;
 		for(int j=i+1; j<weigth.length; j++){
@@ -393,13 +455,13 @@ class p7{
 		    max = j;
 		  }
 		}
-		double temp = weigth[i];
+		int temp = weigth[i];
 		weigth[i] = weigth[max];
 		weigth[max] = temp;
 	  }
 	   System.out.println("\nWeigths in descending order:");
         for (int i = 0; i < 10; i++) {
-            System.out.println(weigth[i]);
+            System.out.print(weigth[i]+" ");
    }
    }
 }
@@ -410,11 +472,11 @@ class p8{
    public static void main(String args[]){
    int[] age =new int[10];
        int lessThan18= 0, between18And60 =0, greaterThan60 = 0;
-   Scanner sc =new Scanner(System.in);
-      System.out.println("Enter the ages of 10 people:");
-    for(int i=0; i<10; i++){
-    age[i] = sc.nextInt();
-  }
+       Scanner sc =new Scanner(System.in);
+       System.out.println("Enter the ages of 10 people:");
+       for(int i=0; i<10; i++){
+       age[i] = sc.nextInt();
+    }
     for(int i = 0; i < 10; i++){
       if(age[i]<18){
       lessThan18++;
@@ -516,7 +578,7 @@ class p10{
     }
    }
    static void displayMatrix(int[][]A, int m, int n){
-      System.out.println("Matrix:");
+      System.out.println("Matrix: ");
      for(int i=0; i<m; i++){
     for(int j=0; j<n; j++){
    System.out.print(A[i][j]+" ");
@@ -547,7 +609,7 @@ class p10{
       for(int j=0;j<n;j++){
       int c=0;
       for(int i=0; i<m; i++){
-      c+=A[i][j];
+      c+=A[j][i];
       }
      System.out.println("Sum of column "+(j+1)+": "+c);
      }
@@ -578,9 +640,9 @@ Each string does not contain leading zeros except for the zero itself.*/
 class st1{
    public static void main(String args[]){
    Scanner sc = new Scanner(System.in);
-       System.out.print("Enter first binary string: ");
+   System.out.print("Enter first binary string: ");
    String a = sc.nextLine();
-       System.out.print("Enter second binary string: ");
+   System.out.print("Enter second binary string: ");
    String b = sc.nextLine();
    String res = addBinary(a,b);
    System.out.println("Sum is: " + res);
@@ -637,20 +699,20 @@ Constraints:
 class st2{
    public static void main(String args[]){
    Scanner sc = new Scanner(System.in);
-    System.out.print("Enter column number: ");
+   System.out.print("Enter column number: ");
    int n = sc.nextInt();
-    String ans = convertTitle(n);
+   String ans = convertTitle(n);
    System.out.println(ans);
    }
    static String convertTitle(int n){
    String res = "";
    while(n > 0){
-   n--;
+      n--;
       int rem = n % 26;
-    char ch = (char)('A' + rem);
+      char ch = (char)('A' + rem);
       res = ch + res;
-   n = n / 26; 
-  }
+      n = n / 26; 
+   }
    return res;
    }
 }
@@ -678,15 +740,15 @@ class st3{
    String s = sc.nextLine();
    String res = reverseVowels(s);
    System.out.println(res);
-      }
+   }
    static String reverseVowels(String s){
    char[] arr = s.toCharArray();
        int i = 0;
-      int j = arr.length-1;
+       int j = arr.length-1;
   
    while(i<j && !isVowel(arr[i])){
    i++;
-       }
+      }
    while(i<j && !isVowel(arr[j])){
    j--;
       }

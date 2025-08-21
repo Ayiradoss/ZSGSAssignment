@@ -108,7 +108,7 @@ class Qa5{
 class Qa6{
   public static void main(String args[]){
      double value = 17.5783458678;
-	 char value1 = (char) value;
+	 float value1 = (float) value;
 	 System.out.println("Original value : "+ value);
 	 System.out.print("After explict : "+value1);
   }
@@ -153,26 +153,26 @@ class Qa8{
 	 System.out.print("Set bit is : "+ pos);
    }
 }
-//9. Write a class Employee with attributes empId, name, department and salary and define
- //a parametrized constructor Employee(int empId, String name, String department, double salary) 
- //and assign these variables to instance variables accordingly and display them?
+/*9. Write a class Employee with attributes empId, name, department and salary and define
+ a parametrized constructor Employee(int empId, String name, String department, double salary) 
+ and assign these variables to instance variables accordingly and display them?*/
 
 class Employee{
 	    int empId;
 		String name;
 		String department;
 		double salary;
-		Employee(int empId, String name, String department, double salary){
+	    Employee(int empId, String name, String department, double salary){
 	       this.empId = empId;
 		   this.name = name;
 		   this.department = department;
 		   this.salary = salary;
-		   }
+		   } 
 		   public void display(){
 		    System.out.print("\nEmployee id : "+ empId + "\nEmployee name : "+ name+ "\nEmployee department : "+ department + "\nEmployee salary : " + salary);
-		   }
+		   } 
     public static void main(String args[]){
-	    Employee obj = new Employee(16, "Ayiradass", "Bsc cs", 15000.12345);
+	    Employee obj = new Employee(16, "Ayiradass", "Bsc cs", 15000.0);
 		obj.display();
 	}
 }
